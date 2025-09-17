@@ -36,7 +36,7 @@ public class Calisan {
         //  bu kodlari donguye tutmak ise yarayabilir.
     }
 
-    // HELLOO
+    // HELLOOooooooooo
 
     private void setCalisanId() {
         // TODO setCalisanId() methodunu doldurunuz
