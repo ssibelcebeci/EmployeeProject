@@ -25,7 +25,6 @@ public class Calisan {
     // Aynıysa, "terminalden girilen çalışanı bu departmana set et" demektir...
     private void setDepartman(String departman) {
         // TODO setDepartman() methodunu doldurunuz
-        for (Departman departmanlar :  )
 
         //  Terminalden girilen calisanin departman koduna göre, gerekli departman set edilmelidir.
         //  Çalışan sınıfının Constructor 'ı main'de tanımlı. Program çalıştığında, terminalden gireceğimiz
