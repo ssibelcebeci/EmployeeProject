@@ -1,5 +1,0 @@
-package CoffeMachineProject;
-
-public enum KahveTurleri {
-    AMERICANO, ESPRESSO, CAPPUCINO, LATTE, MOCHA, MACCHIATO, AFFOGATO, BUZLU_KAHVE, FRAPPUCINO, IRISH
-}
