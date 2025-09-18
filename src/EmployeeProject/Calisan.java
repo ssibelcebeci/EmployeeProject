@@ -112,7 +112,7 @@ public class Calisan {
     @Override
     public String toString() {
 
-        // TODO toString() metheodunu doldurunuz
+        // TODO toString() methodunu doldurunuz
         // İpucu: Detayli anlatim EmployeesRequirements.pdf içerisinde.
 //Çalışanlar konsola yazdırılırken, sadece Çalışanın ID si, Adi Soyadi, Maaşı, ve
 //Departmanının adi bulunmalıdır .
