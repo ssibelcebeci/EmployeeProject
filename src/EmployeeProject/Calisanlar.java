@@ -27,6 +27,8 @@ public class Calisanlar {
         // TODO Bir çalışan silmek için gerekli method. deleteACalisanWithId() methodunu doldurunuz
 
 
+        // merhaba merhaba merhaba
+
 
     }
 

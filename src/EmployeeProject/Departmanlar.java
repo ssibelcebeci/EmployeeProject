@@ -10,7 +10,7 @@ public class Departmanlar {
     // Bunu bir veritabani gibi düsünmeliyiz bu yüzden proje calistiği zaman, ilk once veritabani olusmali ki
     // ekleme cikarma islemlerini rahatca yapabilelim bu yüzden tüm değerleri static verip, departmanList i ise
     // new leyip, bu departmanlari içerisinde bulunduralim.
-    static private final Departman BILISIM_TEKLONOJILERI_DEPARTMANI = new BilisimTeklonojileriDepartmani();
+    static private final Departman BILISIM_TEKLONOJILERI_DEPARTMANI = new BilisimTeknolojileriDepartmani();
     static private final Departman YONETIM_DEPARTMANI = new YonetimDepartmani();
     static private final Departman INSAN_KAYNAKLARI_DEPARTMANI = new InsanKaynaklariDepartmani();
     static private List<Departman> DepartmanList = new ArrayList<>(Arrays.asList(BILISIM_TEKLONOJILERI_DEPARTMANI, YONETIM_DEPARTMANI, INSAN_KAYNAKLARI_DEPARTMANI));
@@ -19,4 +19,5 @@ public class Departmanlar {
     public static List<Departman> getDepartmanList() {
         return DepartmanList;
     }
+
 }

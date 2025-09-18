@@ -2,7 +2,8 @@ package EmployeeProject;
 
 import java.util.Scanner;
 
-public class MainClass {
+public class
+MainClass {
     public static void main(String[] args) throws InterruptedException {
 
     // TODO Bu class'da bir sey degistirmenize gerek yok
@@ -86,7 +87,7 @@ public class MainClass {
 
             // Eğer secim 2 yapilir ise Calisanlar listelenecek
         } else if (secim1 == 2) {
-            System.out.print("Tüm calisanlar listeleniyor...");
+            System.out.print("Büşra Tüm calisanlar listeleniyor...");
             Thread.sleep(1000);
             for (int i = 0; i < 20; i++) {
                 System.out.print('>');
