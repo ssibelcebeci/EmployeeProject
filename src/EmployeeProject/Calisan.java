@@ -7,7 +7,7 @@ public class Calisan {
     private int maas;
     private static Departman Departman;
     private String isimKodu = "";
-
+// Merhaba Dünya
     public Calisan(String adSoyad, int maas, String departmanKodu) {
         this.adSoyad = adSoyad;
         this.maas = maas;
@@ -41,6 +41,7 @@ public class Calisan {
         //  bu kodlari donguye tutmak ise yarayabilir.
     }
     // Hiiiii
+    // byeeee
 
 
     private void setCalisanId() {
@@ -90,7 +91,7 @@ public class Calisan {
 
 
 
-        return " ";// TODO burayi unutmayin
+        return Departman.getDepartmanKodu();// TODO burayi unutmayin
     }
 
     // Calisana zam yapilmasi için gerekli bir method
@@ -98,6 +99,12 @@ public class Calisan {
         // TODO zamYap() methodunu doldurunuz
         // İpucu:Calisan ID si kullanilarak yapilmalidir, diğer attributelarin aynilarindan 1 er tane daha olabilirdi.
 
+        for (Calisan calisan : Calisanlar.getCalisanList()) {
+            if (calisan.getCalisanId().equalsIgnoreCase(calisanId)) {
+                calisan.maas = calisan.maas * Departman.getZamOrani() / 100;
+                break;
+            }
+        }
 
     }
 
