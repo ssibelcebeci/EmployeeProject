@@ -40,6 +40,7 @@ public class Calisan {
         //  İpucu: Departman listesinin (Veritabani.Departmanlar.DepartmanList) içerisindeki departmanların kodları var,
         //  bu kodlari donguye tutmak ise yarayabilir.
     }
+    // HELLOO
 
 
     private void setCalisanId() {
