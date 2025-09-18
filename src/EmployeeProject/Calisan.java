@@ -7,7 +7,7 @@ public class Calisan {
     private int maas;
     private static Departman Departman;
     private String isimKodu = "";
-
+// Merhaba Dünya
     public Calisan(String adSoyad, int maas, String departmanKodu) {
         this.adSoyad = adSoyad;
         this.maas = maas;
