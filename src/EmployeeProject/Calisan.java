@@ -84,7 +84,7 @@ public class Calisan {
 
 
 
-        return " ";// TODO burayi unutmayin
+        return Departman.getDepartmanKodu();// TODO burayi unutmayin
     }
 
     // Calisana zam yapilmasi için gerekli bir method
