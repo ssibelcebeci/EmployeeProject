@@ -95,21 +95,13 @@ public class Calisan {
 
     }
 
-    // Calisanlari yazdırmak için gerekli bir override
     @Override
     public String toString() {
-
-        // TODO toString() metheodunu doldurunuz
-        // İpucu: Detayli anlatim EmployeesRequirements.pdf içerisinde.
-//Çalışanlar konsola yazdırılırken, sadece Çalışanın ID si, Adi Soyadi, Maaşı, ve
-//Departmanının adi bulunmalıdır .
-//Örn: "Calisan ID : 'BTD1IK', Isim Soyisim : 'Ilker Kula', Maas : '25000', Departman :
-//'Bilişim Teknolojileri Departmanı'"
-//(İpucu: toString() methodu ile kolayca yapılabilir .)
-        return  "???? " ;// TODO burayi unutmayin
-
-
-
-
+        return "Calisan{" +
+                "calisanId='" + calisanId + '\'' +
+                ", adSoyad='" + adSoyad + '\'' +
+                ", maas=" + maas +
+                ", isimKodu='" + isimKodu + '\'' +
+                '}';
     }
 }
