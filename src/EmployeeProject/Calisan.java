@@ -81,9 +81,7 @@ public class Calisan {
         // TODO getDepartmanAdi() methodunu doldurunuz
         // İpucu: Departman Kodu YD ise departman adi Yonetim Departmani olarak kaydedilmelidir.
 
-
-
-        return " ";// TODO burayi unutmayin
+        return "" ;// TODO burayi unutmayin
     }
 
     // Calisana zam yapilmasi için gerekli bir method
@@ -91,6 +89,12 @@ public class Calisan {
 
         // TODO zamYap() methodunu doldurunuz
         // İpucu:Calisan ID si kullanilarak yapilmalidir, diğer attributelarin aynilarindan 1 er tane daha olabilirdi.
+        for (Calisan calisan:Calisanlar.getCalisanList()){
+            if (calisan.getCalisanId().equalsIgnoreCase(calisanId)){
+                calisan.maas= calisan.maas*Departman.getZamOrani()/100;
+                break;
+            }
+        }
 
 
     }
