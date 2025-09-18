@@ -43,7 +43,6 @@ public class Calisan {
     // Hiiiii
     // byeeee
 
-    // HELLOOooooooooo
 
     private void setCalisanId() {
         // TODO setCalisanId() methodunu doldurunuz
@@ -84,7 +83,7 @@ public class Calisan {
 
 
 
-        return Departman.getDepartmanKodu();// TODO burayi unutmayin
+        return " ";// TODO burayi unutmayin
     }
 
     // Calisana zam yapilmasi için gerekli bir method
