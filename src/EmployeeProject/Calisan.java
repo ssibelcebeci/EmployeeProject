@@ -5,7 +5,7 @@ public class Calisan {
     private String calisanId;
     private String adSoyad;
     private int maas;
-    private Departman Departman;
+    private static Departman Departman;
     private String isimKodu = "";
 
     public Calisan(String adSoyad, int maas, String departmanKodu) {
@@ -25,7 +25,12 @@ public class Calisan {
     // Aynıysa, "terminalden girilen çalışanı bu departmana set et" demektir...
     private void setDepartman(String departman) {
         // TODO setDepartman() methodunu doldurunuz
-        for (Departman departmanlar :  )
+        for (Departman d : Departmanlar.getDepartmanList()) {
+            if (d.getDepartmanKodu().equalsIgnoreCase(departman)) {
+                Departman = d;
+                break;
+            }
+        }
 
         //  Terminalden girilen calisanin departman koduna göre, gerekli departman set edilmelidir.
         //  Çalışan sınıfının Constructor 'ı main'de tanımlı. Program çalıştığında, terminalden gireceğimiz
@@ -50,11 +55,7 @@ public class Calisan {
         // Calisanin ID sinin sonuna isim kodu eklenmesi için, ismi parçalayan bir method
         // Basit string metodlari ise isinize cok yarayacaktir fakat dinamik olmasina dikkat edelim...
         // Mesela 2 isim bir soyisim girildiğinde hata vermesin.
-
-
-
-
-        return  "???? " ;// TODO burayi unutmayin
+        return "";// TODO burayi unutmayin
     }
 
 
@@ -78,7 +79,7 @@ public class Calisan {
 
 
 
-        return  "???? " ;// TODO burayi unutmayin
+        return " ";// TODO burayi unutmayin
     }
 
     // Calisana zam yapilmasi için gerekli bir method
@@ -86,7 +87,6 @@ public class Calisan {
 
         // TODO zamYap() methodunu doldurunuz
         // İpucu:Calisan ID si kullanilarak yapilmalidir, diğer attributelarin aynilarindan 1 er tane daha olabilirdi.
-
 
 
     }
