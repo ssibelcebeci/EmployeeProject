@@ -27,7 +27,7 @@ public class Calisan {
         // TODO setDepartman() methodunu doldurunuz
         for (Departman d : Departmanlar.getDepartmanList()) {
             if (d.getDepartmanKodu().equalsIgnoreCase(departman)) {
-                Departman = d;
+               Departman = d;
                 break;
             }
         }
@@ -40,13 +40,16 @@ public class Calisan {
         //  İpucu: Departman listesinin (Veritabani.Departmanlar.DepartmanList) içerisindeki departmanların kodları var,
         //  bu kodlari donguye tutmak ise yarayabilir.
     }
+    // Hiiiii
 
 
     private void setCalisanId() {
         // TODO setCalisanId() methodunu doldurunuz
         // Calisanin ID sinin kendisine özel olduğundan bahsetmistik,
         // ID nin nasil kaydedileceği Readme Dosyasi içerisinde yer aliyor.
-
+        int sayi=Calisanlar.getCalisanList().size()+1;
+        this.calisanId=this.Departman.getDepartmanKodu()
+                +sayi+getCalisanIsimKodu();
 
     }
 
