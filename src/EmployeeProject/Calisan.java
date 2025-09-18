@@ -58,7 +58,16 @@ public class Calisan {
         // Calisanin ID sinin sonuna isim kodu eklenmesi için, ismi parçalayan bir method
         // Basit string metodlari ise isinize cok yarayacaktir fakat dinamik olmasina dikkat edelim...
         // Mesela 2 isim bir soyisim girildiğinde hata vermesin.
-        return "";// TODO burayi unutmayin
+        String isimKodu= adSoyad.toUpperCase();
+        String kod= String.valueOf(adSoyad.charAt(0));
+
+        int bosluk=isimKodu.indexOf(" ");
+
+        while (bosluk!=-1){
+            kod+=isimKodu.charAt(bosluk+1);
+            bosluk=isimKodu.indexOf(" ");}
+
+        return kod; // TODO burayi unutmayin
     }
 
 
@@ -76,7 +85,6 @@ public class Calisan {
 
     // Departman adini verebilmek için bir method
     public String getDepartmanAdi() {
-
         // TODO getDepartmanAdi() methodunu doldurunuz
         // İpucu: Departman Kodu YD ise departman adi Yonetim Departmani olarak kaydedilmelidir.
 
@@ -87,7 +95,6 @@ public class Calisan {
 
     // Calisana zam yapilmasi için gerekli bir method
     public static void zamYap(String calisanId) {
-
         // TODO zamYap() methodunu doldurunuz
         // İpucu:Calisan ID si kullanilarak yapilmalidir, diğer attributelarin aynilarindan 1 er tane daha olabilirdi.
 
@@ -105,9 +112,7 @@ public class Calisan {
 //Örn: "Calisan ID : 'BTD1IK', Isim Soyisim : 'Ilker Kula', Maas : '25000', Departman :
 //'Bilişim Teknolojileri Departmanı'"
 //(İpucu: toString() methodu ile kolayca yapılabilir .)
-        return  "???? " ;// TODO burayi unutmayin
-
-
+        return  "isim";// TODO burayi unutmayin
 
 
     }
