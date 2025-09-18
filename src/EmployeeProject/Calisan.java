@@ -46,7 +46,9 @@ public class Calisan {
         // TODO setCalisanId() methodunu doldurunuz
         // Calisanin ID sinin kendisine özel olduğundan bahsetmistik,
         // ID nin nasil kaydedileceği Readme Dosyasi içerisinde yer aliyor.
-
+        int sayi=Calisanlar.getCalisanList().size()+1;
+        this.calisanId=this.Departman.getDepartmanKodu()
+                +sayi+getCalisanIsimKodu();
 
     }
 
