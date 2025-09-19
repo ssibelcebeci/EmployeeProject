@@ -25,11 +25,12 @@ public class Calisanlar {
     public static void deleteACalisanWithId(String calisanId) {
 
         // TODO Bir çalışan silmek için gerekli method. deleteACalisanWithId() methodunu doldurunuz
-
-
-        // merhaba merhaba merhaba
-
-
+        for (int i = 0; i < calisanList.size(); i++) {
+            if (calisanList.get(i).getCalisanId().equalsIgnoreCase(calisanId)) {
+                calisanList.remove(i);
+                break;
+            }
+        }
     }
 
 
@@ -37,18 +38,20 @@ public class Calisanlar {
 
         // TODO  Departman kodu verilerek, konsola sadece o departmanda calisanlari yazdirmak için
         //       printDepartmandakiCalisanlar() methodunu doldurunuz
-        printCalisanlar();
-
-
-
-
+        for (Calisan calis : calisanList) {
+            if (calis.getDepartman().getDepartmanKodu().equalsIgnoreCase(departmanKodu)) {
+                System.out.println(calis);
+            }
+        }
     }
 
 
     public static void printCalisanlar() {
 
         // TODO  Calisanlari konsola yazdirmak için printCalisanlar() methodunu doldurun
-
+        for (Calisan calisan : calisanList) {
+            System.out.println(calisan);
+        }
 
 
 

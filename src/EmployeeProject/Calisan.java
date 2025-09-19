@@ -5,9 +5,11 @@ public class Calisan {
     private String calisanId;
     private String adSoyad;
     private int maas;
-    private static Departman Departman;
+    private Departman departman;
     private String isimKodu = "";
-// Merhaba Dünya
+
+
+    // Merhaba Dünya
     public Calisan(String adSoyad, int maas, String departmanKodu) {
         this.adSoyad = adSoyad;
         this.maas = maas;
@@ -23,11 +25,11 @@ public class Calisan {
     // departman kodu, buradaki metod (setDepartman) vasıtasıyla departman listesinin tümünü dolaşıp (foreach)
     // getDepartmanKodu() ile bulunan sonuçlardan biriyle aynı mı? Diye bakıyoruz...
     // Aynıysa, "terminalden girilen çalışanı bu departmana set et" demektir...
-    private void setDepartman(String departman) {
+    private void setDepartman(String departmanKodu) {
         // TODO setDepartman() methodunu doldurunuz
         for (Departman d : Departmanlar.getDepartmanList()) {
-            if (d.getDepartmanKodu().equalsIgnoreCase(departman)) {
-               Departman = d;
+            if (d.getDepartmanKodu().equalsIgnoreCase(departmanKodu)) {
+               this.departman = d;
                 break;
             }
         }
@@ -49,7 +51,7 @@ public class Calisan {
         // Calisanin ID sinin kendisine özel olduğundan bahsetmistik,
         // ID nin nasil kaydedileceği Readme Dosyasi içerisinde yer aliyor.
         int sayi=Calisanlar.getCalisanList().size()+1;
-        this.calisanId=this.Departman.getDepartmanKodu()
+        this.calisanId=this.departman.getDepartmanKodu()
                 +sayi+getCalisanIsimKodu();
 
     }
@@ -59,7 +61,15 @@ public class Calisan {
         // Calisanin ID sinin sonuna isim kodu eklenmesi için, ismi parçalayan bir method
         // Basit string metodlari ise isinize cok yarayacaktir fakat dinamik olmasina dikkat edelim...
         // Mesela 2 isim bir soyisim girildiğinde hata vermesin.
-        return "";// TODO burayi unutmayin
+        String isimKodu=adSoyad.toUpperCase();
+        String kod= String.valueOf(adSoyad.charAt(0));
+
+        int bosluk=isimKodu.indexOf(" ");
+        while (bosluk!=-1){
+            kod+=isimKodu.charAt(bosluk+1);
+            bosluk=isimKodu.indexOf(" ",bosluk+1);
+        }
+        return kod;// TODO burayi unutmayin
     }
 
 
@@ -71,19 +81,20 @@ public class Calisan {
 
     // Calisanin departmanini almak icin basit getter method
     public Departman getDepartman() {
-        return this.Departman;
+        return this.departman;
     }
 
 
     // Departman adini verebilmek için bir method
     public String getDepartmanAdi() {
+        switch (this.departman.getDepartmanKodu()) {
+            case "YD" : return "Yönetim Departmanı";
+            case "BTD": return "Bilişim Teknolojileri Departmanı";
+            case "IKD": return "İnsan Kaynakları Departmanı";
+            default: return "Bilinmeyen Departman";
+        }
+        // TODO burayi unutmayin
 
-        // TODO getDepartmanAdi() methodunu doldurunuz
-        // İpucu: Departman Kodu YD ise departman adi Yonetim Departmani olarak kaydedilmelidir.
-
-
-
-        return Departman.getDepartmanKodu();// TODO burayi unutmayin
     }
 
     // Calisana zam yapilmasi için gerekli bir method
@@ -94,28 +105,24 @@ public class Calisan {
 
         for (Calisan calisan : Calisanlar.getCalisanList()) {
             if (calisan.getCalisanId().equalsIgnoreCase(calisanId)) {
-                calisan.maas = calisan.maas * Departman.getZamOrani() / 100;
+                calisan.maas = calisan.maas + (calisan.maas * calisan.departman.getZamOrani() / 100);
                 break;
             }
         }
-
     }
 
-    // Calisanlari yazdırmak için gerekli bir override
     @Override
     public String toString() {
-
-        // TODO toString() methodunu doldurunuz
         // İpucu: Detayli anlatim EmployeesRequirements.pdf içerisinde.
 //Çalışanlar konsola yazdırılırken, sadece Çalışanın ID si, Adi Soyadi, Maaşı, ve
 //Departmanının adi bulunmalıdır .
 //Örn: "Calisan ID : 'BTD1IK', Isim Soyisim : 'Ilker Kula', Maas : '25000', Departman :
 //'Bilişim Teknolojileri Departmanı'"
 //(İpucu: toString() methodu ile kolayca yapılabilir .)
-        return  "???? " ;// TODO burayi unutmayin
-
-
-
-
+        return "Calisan: " +
+                "Çalışan Id:" + calisanId + '\'' +
+                ",AdSoyad: " + adSoyad + '\'' +
+                ", Maaş: " + maas +
+                ", Departman: " + getDepartmanAdi()+ '\'';
     }
 }
